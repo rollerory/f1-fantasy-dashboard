@@ -13,3 +13,12 @@ export interface Snapshot {
   source_time: string;
   entries: Entry[];
 }
+
+export interface GpSnapshot {
+  gp_id: number;
+  fetched_at: string;
+  source_time: string;
+  entries: Entry[];
+}
+
+export type GpNames = Record<string, string>;

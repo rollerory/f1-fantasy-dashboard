@@ -1,8 +1,8 @@
-import type { Snapshot } from "./types";
+import type { Entry } from "./types";
 
 /** Stable series order: first appearance in the earliest snapshot, by rank.
  * Colors must follow the entity, never its current rank. */
-export function buildSeriesOrder(history: Snapshot[]): string[] {
+export function buildSeriesOrder(history: { entries: Entry[] }[]): string[] {
   const seen = new Set<string>();
   const order: string[] = [];
   for (const snap of history) {

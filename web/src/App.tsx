@@ -1,15 +1,20 @@
 import { useMemo } from "react";
 import "./App.css";
-import { useHistory } from "./useHistory";
+import { useJson } from "./useJson";
 import { buildSeriesOrder, formatFullDate, formatPoints } from "./lib";
 import { LineChart } from "./components/LineChart";
+import { GpPointsChart } from "./components/GpPointsChart";
 import { StandingsTable } from "./components/StandingsTable";
 import { StatTile } from "./components/StatTile";
+import type { Snapshot, GpSnapshot, GpNames } from "./types";
 
 const LEAGUE_URL = "https://fantasy.formula1.com/en/leagues/leaderboard/private/12834205";
 
 function App() {
-  const { data, error, loading } = useHistory();
+  const { data, error, loading } = useJson<Snapshot[]>("data/history.json");
+  const { data: gpData } = useJson<GpSnapshot[]>("data/gp_history.json");
+  const { data: gpNamesData } = useJson<GpNames>("data/gp_names.json");
+  const gpNames = gpNamesData ?? {};
 
   const history = useMemo(() => {
     if (!data) return [];
@@ -18,6 +23,11 @@ function App() {
     );
   }, [data]);
 
+  const gpHistory = useMemo(() => {
+    if (!gpData) return [];
+    return [...gpData].sort((a, b) => a.gp_id - b.gp_id);
+  }, [gpData]);
+
   const latest = history[history.length - 1];
   const seriesOrder = useMemo(() => buildSeriesOrder(history), [history]);
   const names = useMemo(() => {
@@ -25,8 +35,11 @@ function App() {
     for (const snap of history) {
       for (const e of snap.entries) m.set(e.user_guid, e.user_name);
     }
+    for (const snap of gpHistory) {
+      for (const e of snap.entries) if (!m.has(e.user_guid)) m.set(e.user_guid, e.user_name);
+    }
     return m;
-  }, [history]);
+  }, [history, gpHistory]);
 
   const sortedLatest = latest ? [...latest.entries].sort((a, b) => a.rank - b.rank) : [];
   const leader = sortedLatest[0];
@@ -62,9 +75,21 @@ function App() {
           </div>
 
           <section>
-            <h2>Динаміка очок</h2>
+            <h2>Динаміка очок за сезон</h2>
             <LineChart history={history} seriesOrder={seriesOrder} names={names} />
           </section>
+
+          {gpHistory.length > 0 && (
+            <section>
+              <h2>Очки за кожен Гран-прі</h2>
+              <GpPointsChart
+                gpHistory={gpHistory}
+                seriesOrder={seriesOrder}
+                names={names}
+                gpNames={gpNames}
+              />
+            </section>
+          )}
 
           <section>
             <h2>Поточна турнірна таблиця</h2>

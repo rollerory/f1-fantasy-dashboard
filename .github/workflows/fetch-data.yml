@@ -18,14 +18,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch leaderboard snapshot
+      - name: Fetch season leaderboard snapshot
         run: python3 scripts/fetch_leaderboard.py
+
+      - name: Fetch per-Grand-Prix leaderboards
+        run: python3 scripts/fetch_gp_history.py
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/history.json
+          git add data/history.json data/gp_history.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

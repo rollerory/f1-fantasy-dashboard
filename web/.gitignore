@@ -23,6 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# Dev-only copy of the data source of truth (data/history.json at repo root).
-# The deploy workflow copies the real file here at build time.
+# Dev-only copies of the data source of truth (data/*.json at repo root).
+# The deploy workflow copies the real files here at build time.
 public/data/history.json
+public/data/gp_history.json
+public/data/gp_names.json

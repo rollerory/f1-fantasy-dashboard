@@ -30,6 +30,8 @@ jobs:
         run: |
           mkdir -p web/public/data
           cp data/history.json web/public/data/history.json
+          cp data/gp_history.json web/public/data/gp_history.json
+          cp data/gp_names.json web/public/data/gp_names.json
 
       - name: Install and build
         working-directory: web
