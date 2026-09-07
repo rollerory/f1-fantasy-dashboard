@@ -3,7 +3,7 @@ import "./App.css";
 import { useJson } from "./useJson";
 import { buildSeriesOrder, formatFullDate, formatPoints } from "./lib";
 import { LineChart } from "./components/LineChart";
-import { GpPointsChart } from "./components/GpPointsChart";
+import { GpResultsBoard } from "./components/GpResultsBoard";
 import { StandingsTable } from "./components/StandingsTable";
 import { StatTile } from "./components/StatTile";
 import type { Snapshot, GpSnapshot, GpNames } from "./types";
@@ -81,13 +81,8 @@ function App() {
 
           {gpHistory.length > 0 && (
             <section>
-              <h2>Очки за кожен Гран-прі</h2>
-              <GpPointsChart
-                gpHistory={gpHistory}
-                seriesOrder={seriesOrder}
-                names={names}
-                gpNames={gpNames}
-              />
+              <h2>Результати по Гран-прі</h2>
+              <GpResultsBoard gpHistory={gpHistory} seriesOrder={seriesOrder} gpNames={gpNames} />
             </section>
           )}
 

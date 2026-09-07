@@ -54,7 +54,7 @@ body {
 }
 
 .page {
-  max-width: 900px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 24px 16px 64px;
 }
@@ -261,4 +261,139 @@ td.muted {
 }
 .trend-flat {
   color: var(--text-muted);
+}
+
+/* --- Grand Prix results board: styled after F1 broadcast graphics,
+   deliberately dark regardless of page theme. --- */
+
+.gp-board {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x proximity;
+}
+
+.gp-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: #0a0a0a;
+  border-radius: 10px;
+  padding: 16px;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.gp-card-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+.gp-round {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #eda100;
+}
+.gp-name {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.podium-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.podium-slot {
+  --slot-bg: color-mix(in srgb, var(--slot-color) 20%, #141414);
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--slot-bg);
+  border-top: 3px solid var(--slot-color);
+  border-radius: 6px 6px 2px 2px;
+  padding: 10px 6px 12px;
+  position: relative;
+}
+.podium-slot-1 {
+  min-height: 178px;
+  padding-top: 14px;
+  order: 2;
+}
+.podium-slot-2 {
+  min-height: 148px;
+  order: 1;
+}
+.podium-slot-3 {
+  min-height: 130px;
+  order: 3;
+}
+
+.podium-rank {
+  align-self: flex-start;
+  font-size: 22px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.28);
+  line-height: 1;
+}
+.podium-name {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.podium-points {
+  font-size: 17px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.podium-points small {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.04em;
+}
+
+.gp-list {
+  display: flex;
+  flex-direction: column;
+}
+.gp-list-row {
+  display: grid;
+  grid-template-columns: 16px 8px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+}
+.gp-list-rank {
+  color: rgba(255, 255, 255, 0.5);
+  font-variant-numeric: tabular-nums;
+}
+.gp-list-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.gp-list-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gp-list-points {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
 }
