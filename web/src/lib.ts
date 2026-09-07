@@ -1,4 +1,4 @@
-import type { Entry } from "./types";
+import type { Entry, GpSnapshot } from "./types";
 
 /** Stable series order: first appearance in the earliest snapshot, by rank.
  * Colors must follow the entity, never its current rank. */
@@ -39,6 +39,29 @@ export function formatPoints(value: number): string {
 export function formatShortDate(iso: string): string {
   const d = new Date(iso);
   return d.toLocaleDateString("uk-UA", { day: "numeric", month: "short" });
+}
+
+export interface CumulativeStanding {
+  gp: GpSnapshot;
+  standings: Map<string, { points: number; rank: number }>;
+}
+
+/** Rebuilds the overall season standing after each Grand Prix from the
+ * per-GP results (running point total -> rank), so the rank-over-time chart
+ * has one column per race even though season snapshots are sparse. */
+export function computeCumulativeStandings(gpHistory: GpSnapshot[]): CumulativeStanding[] {
+  const totals = new Map<string, number>();
+  const ordered = [...gpHistory].sort((a, b) => a.gp_id - b.gp_id);
+
+  return ordered.map((gp) => {
+    for (const e of gp.entries) {
+      totals.set(e.user_guid, (totals.get(e.user_guid) ?? 0) + e.points);
+    }
+    const ranked = [...totals.entries()].sort((a, b) => b[1] - a[1]);
+    const standings = new Map<string, { points: number; rank: number }>();
+    ranked.forEach(([guid, points], i) => standings.set(guid, { points, rank: i + 1 }));
+    return { gp, standings };
+  });
 }
 
 export function formatFullDate(iso: string): string {

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import "./App.css";
 import { useJson } from "./useJson";
 import { buildSeriesOrder, formatFullDate, formatPoints } from "./lib";
-import { LineChart } from "./components/LineChart";
+import { RankChart } from "./components/RankChart";
 import { GpResultsBoard } from "./components/GpResultsBoard";
 import { StandingsTable } from "./components/StandingsTable";
 import { StatTile } from "./components/StatTile";
@@ -74,10 +74,12 @@ function App() {
             <StatTile label="Останнє оновлення" value={formatFullDate(latest.fetched_at)} />
           </div>
 
-          <section>
-            <h2>Динаміка очок за сезон</h2>
-            <LineChart history={history} seriesOrder={seriesOrder} names={names} />
-          </section>
+          {gpHistory.length > 0 && (
+            <section>
+              <h2>Динаміка позицій за сезон</h2>
+              <RankChart gpHistory={gpHistory} seriesOrder={seriesOrder} names={names} gpNames={gpNames} />
+            </section>
+          )}
 
           {gpHistory.length > 0 && (
             <section>

@@ -40,20 +40,28 @@ def fetch_gameperiod(gp_id: int) -> dict | None:
     if not entries:
         return None
 
+    # Some members run a second fantasy team in the same league (team_no=2).
+    # Only team_no=1 counts toward the overall season standings, so keep the
+    # per-GP data consistent with that (otherwise a person's rounds get
+    # double-counted and their rank/points here won't reconcile with the
+    # season leaderboard).
     normalized = []
     for e in entries:
+        if e.get("team_no") != 1:
+            continue
         normalized.append(
             {
-                "rank": e["cur_rank"],
-                "trend": e["trend"],
                 "user_guid": e["user_guid"],
                 "user_name": e["user_name"],
                 "team_name": urllib.parse.unquote(e["team_name"]),
                 "points": e["cur_points"],
                 "roster": e["user_team"],
+                "trend": 0,  # not meaningful per-GP; kept only for a uniform Entry shape
             }
         )
-    normalized.sort(key=lambda e: e["rank"])
+    normalized.sort(key=lambda e: -e["points"])
+    for i, e in enumerate(normalized, start=1):
+        e["rank"] = i
 
     return {
         "gp_id": gp_id,

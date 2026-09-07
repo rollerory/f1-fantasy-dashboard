@@ -198,6 +198,17 @@ h2 {
 .tooltip-value {
   color: var(--text-primary);
   font-weight: 600;
+  white-space: nowrap;
+}
+.tooltip-value small {
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.rank-label {
+  fill: var(--text-secondary);
+  font-size: 12px;
 }
 
 .legend {

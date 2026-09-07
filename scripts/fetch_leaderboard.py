@@ -28,6 +28,10 @@ def fetch_leaderboard() -> dict:
 def normalize_entries(raw_entries: list[dict]) -> list[dict]:
     entries = []
     for e in raw_entries:
+        # A member can run a second fantasy team in the league (team_no=2);
+        # only their primary team counts toward the overall standings.
+        if e.get("team_no") != 1:
+            continue
         entries.append(
             {
                 "rank": e["cur_rank"],
