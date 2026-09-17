@@ -546,14 +546,14 @@
   },
   {
     "gp_id": 6,
-    "fetched_at": "2026-09-07T14:14:18.824293+00:00",
-    "source_time": "6/19/2026 2:32:33 PM",
+    "fetched_at": "2026-09-17T16:05:34.801674+00:00",
+    "source_time": "9/17/2026 2:29:53 PM",
     "entries": [
       {
         "user_guid": "1d573be0-199f-11f1-8a7d-f11b0acd5421-0-189892368",
         "user_name": "Nikita Chuiko",
         "team_name": "impulse gp",
-        "points": 228.0,
+        "points": 237.0,
         "roster": [
           "11161",
           "110",
@@ -570,7 +570,7 @@
         "user_guid": "e417d498-1278-11f1-af05-8968b4222854-0-229437936",
         "user_name": "Den Gudj",
         "team_name": "Zalupa",
-        "points": 152.0,
+        "points": 139.0,
         "roster": [
           "11161",
           "11031",
@@ -604,7 +604,7 @@
         "user_guid": "d8abfa4a-19a2-11f1-ae75-0178a8eb5bf5-0-232612092",
         "user_name": "Ferran Torres",
         "team_name": "Ferran Torres",
-        "points": 98.0,
+        "points": 107.0,
         "roster": [
           "11161",
           "115",
@@ -638,7 +638,7 @@
         "user_guid": "98d74284-19b2-11f1-81d6-f9d14c4690d8-0-232636503",
         "user_name": "Oleksandr Oleksiienko",
         "team_name": "OneManWolfPack_OOS",
-        "points": 41.0,
+        "points": 44.0,
         "roster": [
           "115",
           "124",
