@@ -1527,31 +1527,14 @@
   },
   {
     "gp_id": 15,
-    "fetched_at": "2026-09-25T16:22:06.263580+00:00",
-    "source_time": "9/25/2026 2:42:16 PM",
+    "fetched_at": "2026-09-26T15:36:35.975769+00:00",
+    "source_time": "9/26/2026 1:39:17 PM",
     "entries": [
-      {
-        "user_guid": "d8abfa4a-19a2-11f1-ae75-0178a8eb5bf5-0-232612092",
-        "user_name": "Ferran Torres",
-        "team_name": "Ferran Torres",
-        "points": 49.0,
-        "roster": [
-          "11161",
-          "115",
-          "18",
-          "11149",
-          "11051",
-          "25",
-          "2636"
-        ],
-        "trend": 0,
-        "rank": 1
-      },
       {
         "user_guid": "b3e52a24-17ea-11f1-b976-8d6ba39db372-0-229065372",
         "user_name": "Dmytro Antoshchuk",
         "team_name": "Rollerory's bangers",
-        "points": 40.0,
+        "points": 158.0,
         "roster": [
           "131",
           "124",
@@ -1562,47 +1545,30 @@
           "2640"
         ],
         "trend": 0,
-        "rank": 2
+        "rank": 1
       },
       {
-        "user_guid": "1d573be0-199f-11f1-8a7d-f11b0acd5421-0-189892368",
-        "user_name": "Nikita Chuiko",
-        "team_name": "impulse gp",
-        "points": 40.0,
+        "user_guid": "98d74284-19b2-11f1-81d6-f9d14c4690d8-0-232636503",
+        "user_name": "Oleksandr Oleksiienko",
+        "team_name": "OneManWolfPack_OOS",
+        "points": 153.0,
         "roster": [
-          "11161",
           "115",
-          "18",
-          "11",
-          "111",
-          "2636",
-          "25"
-        ],
-        "trend": 0,
-        "rank": 3
-      },
-      {
-        "user_guid": "b691f010-19a0-11f1-abd0-6f8df895a5fb-0-232611581",
-        "user_name": "Roman Myroniuk",
-        "team_name": "ronerito",
-        "points": 32.0,
-        "roster": [
+          "124",
           "11161",
+          "11149",
           "11031",
-          "11",
-          "11059",
-          "18",
-          "2636",
-          "25"
+          "26",
+          "2640"
         ],
         "trend": 0,
-        "rank": 4
+        "rank": 2
       },
       {
         "user_guid": "e417d498-1278-11f1-af05-8968b4222854-0-229437936",
         "user_name": "Den Gudj",
         "team_name": "Zalupa",
-        "points": 32.0,
+        "points": 128.0,
         "roster": [
           "11161",
           "11031",
@@ -1613,21 +1579,55 @@
           "26"
         ],
         "trend": 0,
+        "rank": 3
+      },
+      {
+        "user_guid": "d8abfa4a-19a2-11f1-ae75-0178a8eb5bf5-0-232612092",
+        "user_name": "Ferran Torres",
+        "team_name": "Ferran Torres",
+        "points": 119.0,
+        "roster": [
+          "11161",
+          "115",
+          "18",
+          "11149",
+          "11051",
+          "25",
+          "2636"
+        ],
+        "trend": 0,
+        "rank": 4
+      },
+      {
+        "user_guid": "1d573be0-199f-11f1-8a7d-f11b0acd5421-0-189892368",
+        "user_name": "Nikita Chuiko",
+        "team_name": "impulse gp",
+        "points": 90.0,
+        "roster": [
+          "11161",
+          "115",
+          "18",
+          "11",
+          "111",
+          "2636",
+          "25"
+        ],
+        "trend": 0,
         "rank": 5
       },
       {
-        "user_guid": "98d74284-19b2-11f1-81d6-f9d14c4690d8-0-232636503",
-        "user_name": "Oleksandr Oleksiienko",
-        "team_name": "OneManWolfPack_OOS",
-        "points": 21.0,
+        "user_guid": "b691f010-19a0-11f1-abd0-6f8df895a5fb-0-232611581",
+        "user_name": "Roman Myroniuk",
+        "team_name": "ronerito",
+        "points": 48.0,
         "roster": [
-          "115",
-          "124",
           "11161",
-          "11149",
           "11031",
-          "26",
-          "2640"
+          "11",
+          "11059",
+          "18",
+          "2636",
+          "25"
         ],
         "trend": 0,
         "rank": 6
