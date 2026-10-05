@@ -1636,14 +1636,14 @@
   },
   {
     "gp_id": 16,
-    "fetched_at": "2026-10-04T11:41:19.707341+00:00",
-    "source_time": "10/4/2026 11:12:27 AM",
+    "fetched_at": "2026-10-05T13:24:01.564965+00:00",
+    "source_time": "10/5/2026 9:50:04 AM",
     "entries": [
       {
         "user_guid": "1d573be0-199f-11f1-8a7d-f11b0acd5421-0-189892368",
         "user_name": "Nikita Chuiko",
         "team_name": "impulse gp",
-        "points": 232.0,
+        "points": 330.0,
         "roster": [
           "11161",
           "131",
@@ -1660,7 +1660,7 @@
         "user_guid": "d8abfa4a-19a2-11f1-ae75-0178a8eb5bf5-0-232612092",
         "user_name": "Ferran Torres",
         "team_name": "Ferran Torres",
-        "points": 140.0,
+        "points": 260.0,
         "roster": [
           "11161",
           "115",
@@ -1677,7 +1677,7 @@
         "user_guid": "e417d498-1278-11f1-af05-8968b4222854-0-229437936",
         "user_name": "Den Gudj",
         "team_name": "Zalupa",
-        "points": 126.0,
+        "points": 213.0,
         "roster": [
           "11161",
           "11031",
@@ -1691,27 +1691,10 @@
         "rank": 3
       },
       {
-        "user_guid": "b691f010-19a0-11f1-abd0-6f8df895a5fb-0-232611581",
-        "user_name": "Roman Myroniuk",
-        "team_name": "ronerito",
-        "points": 114.0,
-        "roster": [
-          "11161",
-          "11031",
-          "11",
-          "11059",
-          "18",
-          "2636",
-          "25"
-        ],
-        "trend": 0,
-        "rank": 4
-      },
-      {
         "user_guid": "b3e52a24-17ea-11f1-b976-8d6ba39db372-0-229065372",
         "user_name": "Dmytro Antoshchuk",
         "team_name": "Rollerory's bangers",
-        "points": 95.0,
+        "points": 201.0,
         "roster": [
           "131",
           "124",
@@ -1722,13 +1705,30 @@
           "2640"
         ],
         "trend": 0,
+        "rank": 4
+      },
+      {
+        "user_guid": "b691f010-19a0-11f1-abd0-6f8df895a5fb-0-232611581",
+        "user_name": "Roman Myroniuk",
+        "team_name": "ronerito",
+        "points": 201.0,
+        "roster": [
+          "11161",
+          "11031",
+          "11",
+          "11059",
+          "18",
+          "2636",
+          "25"
+        ],
+        "trend": 0,
         "rank": 5
       },
       {
         "user_guid": "98d74284-19b2-11f1-81d6-f9d14c4690d8-0-232636503",
         "user_name": "Oleksandr Oleksiienko",
         "team_name": "OneManWolfPack_OOS",
-        "points": 80.0,
+        "points": 179.0,
         "roster": [
           "115",
           "124",
